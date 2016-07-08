@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  WoDeModel_1.m
 //  IkkyuChegj
 //
 //  Created by 石家庄盛航 on 16/7/8.
 //  Copyright © 2016年 sjzshtx. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WoDeModel_1.h"
 
-@interface ViewController : UIViewController
-
+@implementation WoDeModel_1
 
 @end
-

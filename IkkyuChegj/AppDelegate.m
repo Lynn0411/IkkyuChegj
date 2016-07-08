@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "IkkyuChegjTabBarViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -14,9 +16,42 @@
 
 @implementation AppDelegate
 
+//设置定位
+- (void)setupLocationManager{
 
+}
+
+- (void)initRootVC{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //控制器数组
+    NSArray *controllerArray = @[@"IkkyuChegjHomeViewController", @"IkkyuChegjWoDeViewController"];
+       //title数组
+    NSArray *titleArray = @[@" 首 页 ", @"我的"];
+      //默认图片数组
+    NSArray *imageArray = @[ShouYeTabBarImage, WoDeTabBarImage];
+    //选中图片数组
+    NSArray *selectedImageArray = @[ShouYeSelectedTabBarImage, WoDeSelectedTabBarImage];
+    //tabBar高度
+    CGFloat tabBarHeight = 49.0;
+    //初始化
+    IkkyuChegjTabBarViewController *TabBar = [[IkkyuChegjTabBarViewController alloc] initWithControllerArray:controllerArray titleArray:titleArray imageArray:imageArray selImageArray:selectedImageArray height:tabBarHeight];
+    
+    
+    //设置为根视图控制器
+    self.window.rootViewController = TabBar;
+    //设置数字角标(可选)
+    [TabBar showBadgeMark:8 index:2];
+    //设置小红点(可选)
+    //    [TabBar showPointMarkIndex:1];
+    //不显示角标(可选)
+    [TabBar hideMarkIndex:3];
+    
+    [self.window makeKeyAndVisible];
+    
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self setupLocationManager];
+    [self initRootVC];
     return YES;
 }
 

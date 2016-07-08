@@ -1,0 +1,24 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "b93b73f7-5ebc-104e-b220-177ad0e5c6fe++9296" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "b93b73f7-5ebc-104e-b220-177ad0e5c6fe++9296" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "28942A5B-EB2C-48E7-B618-521E3836296D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "b93b73f7-5ebc-104e-b220-177ad0e5c6fe++9296" : "IkkyuChegj\/IkkyuChegj\/Other\/AFNet\/AFNetworking\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "IkkyuChegj",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "IkkyuChegj.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.2.10:8443\/svn\/MobileDevelopment",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "b93b73f7-5ebc-104e-b220-177ad0e5c6fe++9296"
+    }
+  ]
+}
