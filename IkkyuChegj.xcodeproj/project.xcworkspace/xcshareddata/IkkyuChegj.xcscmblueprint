@@ -1,24 +1,32 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4D439D3EFE7D146DAE3F76CDDD0D515F3146B289",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
-    "b93b73f7-5ebc-104e-b220-177ad0e5c6fe++9296" : {
+    "b93b73f7-5ebc-104e-b220-177ad0e5c6fe++6249" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "b93b73f7-5ebc-104e-b220-177ad0e5c6fe++9296" : 0
+    "4D439D3EFE7D146DAE3F76CDDD0D515F3146B289" : 0,
+    "b93b73f7-5ebc-104e-b220-177ad0e5c6fe++6249" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "28942A5B-EB2C-48E7-B618-521E3836296D",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "b93b73f7-5ebc-104e-b220-177ad0e5c6fe++9296" : "IkkyuChegj\/IkkyuChegj\/Other\/AFNet\/AFNetworking\/"
+    "4D439D3EFE7D146DAE3F76CDDD0D515F3146B289" : "IkkyuChegj\/",
+    "b93b73f7-5ebc-104e-b220-177ad0e5c6fe++6249" : "IkkyuChegj\/IkkyuChegj\/Other\/AFNet\/AFNetworking\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "IkkyuChegj",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "IkkyuChegj.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Lynn0411\/IkkyuChegj.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4D439D3EFE7D146DAE3F76CDDD0D515F3146B289"
+    },
+    {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.2.10:8443\/svn\/MobileDevelopment",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "b93b73f7-5ebc-104e-b220-177ad0e5c6fe++9296"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "b93b73f7-5ebc-104e-b220-177ad0e5c6fe++6249"
     }
   ]
 }

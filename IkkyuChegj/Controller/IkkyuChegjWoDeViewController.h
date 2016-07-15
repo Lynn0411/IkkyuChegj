@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface IkkyuChegjWoDeViewController : UIViewController
-
+@property (nonatomic, strong) UITableView *tableView;
 @end

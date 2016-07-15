@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface HomeModel_1 : NSObject
-
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *tapButtom;
 @end
