@@ -13,13 +13,17 @@
 #import "HomeTopCollectionViewCell.h"
 #import "HomeModel_1.h"
 
-@interface IkkyuChegjHomeViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface IkkyuChegjHomeViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout >
+
 @property (nonatomic , strong)UICollectionView *collectionView;
 @property (nonatomic , strong)NSMutableArray *dataArr;
 @property (nonatomic , strong)UICollectionViewFlowLayout *flowLayout;
+@property (nonatomic, strong) UIView *firstView;
+
 @end
 
 @implementation IkkyuChegjHomeViewController
+#define kTAG_BASE_VALUE 90
 
 - (void)setNav{
     [self showCity:@"城市"];
@@ -145,11 +149,13 @@
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
     }];*/
 }
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)setStartView{
     self.title = @"壹修车管家";
     self.view.backgroundColor = [UIColor whiteColor];
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setStartView];
     [self setNav];
     [self reloadCollectionView];
     [self registerCell];
@@ -158,15 +164,82 @@
     [self.collectionView addHeaderWithTarget:self action:@selector(httpRequest)];
     //自动下拉刷新
     [self.collectionView headerBeginRefreshing];
-    // Do any additional setup after loading the view.
+  
+
+
+    
+    [self createSubView];
+    [self startAnimatew];
 }
+
+#pragma mark 动画先顺时针旋转90度再逆时针旋转90度
+/*
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //离屏后会remove animation，这里重新添加
+    [self startAnimatew];
+    //程序从后台进入激活状态需要重新添加Animation
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startAnimatew) name:@"kAPPEnterForeground" object:nil];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"kAPPEnterForeground" object:nil];
+}
+*/
+- (UIImageView *)createImageViewWithFrame:(CGRect)frame tag:(NSInteger)tag named:(NSString *)name{
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:frame];
+    imageView.tag = tag;
+    imageView.image = [UIImage imageNamed:name];
+    return imageView;
+}
+- (void)createSubView{
+    _firstView = [[UIView alloc] initWithFrame:CGRectMake(20, 40, 60, 60)];
+    [self.view addSubview:_firstView];
+    CGRect frame = self.firstView.bounds;
+    UIImageView *imageView = [self createImageViewWithFrame:frame tag:kTAG_BASE_VALUE named:@"2.jpg"];
+    //定位点,不写默认是中心点
+    imageView.layer.anchorPoint = CGPointMake(28/45, 16/45);
+
+    imageView.frame = frame;
+    [self.firstView addSubview:imageView];
+
+}
+- (void)startAnimatew{
+    id fromValue = [NSNumber numberWithFloat:-M_PI_4];
+    id toValue = [NSNumber numberWithFloat:M_PI_4];
+    UIImageView *imageView = [self.firstView viewWithTag:kTAG_BASE_VALUE];
+    [self animationWithView:imageView keyPath:@"transform.rotation.z" fromValue:fromValue toValue:toValue];
+
+}
+
+- (void)animationWithView:(UIView *)view keyPath:(NSString *)keyPath fromValue:(id)fromValue toValue:(id)toValue{
+    CAAnimation *animation = [self createAnimationWithKeyPath:keyPath fromValue:fromValue toValue:toValue];
+    [view.layer addAnimation:animation forKey:nil];
+}
+- (CAAnimation *)createAnimationWithKeyPath:(NSString *)keyPath fromValue:(id)fromValue toValue:(id)toValue{
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:keyPath];
+    animation.duration = 1.5; // 持续时间
+    CAMediaTimingFunction *mediaTiming = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation.timingFunction = mediaTiming;
+    animation.repeatCount = HUGE_VALF; // 重复次数
+    animation.fromValue =  fromValue;// 起始角度
+    animation.toValue = toValue; // 终止角度
+    animation.autoreverses = YES;
+    return animation;
+}
+
+
+
+
+
+
 #pragma mark <UICollectionViewDataSource>
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
 
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.dataArr.count;
 }
 
@@ -199,17 +272,8 @@
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

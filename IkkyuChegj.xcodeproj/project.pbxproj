@@ -77,6 +77,8 @@
 		2E7789D01D3387D8000F29D4 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7789BC1D3387D8000F29D4 /* UIRefreshControl+AFNetworking.m */; };
 		2E7789D11D3387D8000F29D4 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7789BE1D3387D8000F29D4 /* UIWebView+AFNetworking.m */; };
 		2E778A131D338D1B000F29D4 /* HttpRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E778A121D338D1B000F29D4 /* HttpRequestManager.m */; };
+		2EAB7B1E1D3E064400D99762 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EAB7B1D1D3E064400D99762 /* 2.jpg */; };
+		2EAB7B241D3E244B00D99762 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EAB7B231D3E244B00D99762 /* 2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,6 +243,8 @@
 		2E7789BE1D3387D8000F29D4 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		2E778A111D338D1B000F29D4 /* HttpRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequestManager.h; sourceTree = "<group>"; };
 		2E778A121D338D1B000F29D4 /* HttpRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequestManager.m; sourceTree = "<group>"; };
+		2EAB7B1D1D3E064400D99762 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		2EAB7B231D3E244B00D99762 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +304,8 @@
 				2E1DD1F21D2F379000997134 /* MyHeader.h */,
 				2E1DD1F31D2F379E00997134 /* PrefixHeader.pch */,
 				2E1DD15D1D2F359E00997134 /* Assets.xcassets */,
+				2EAB7B1D1D3E064400D99762 /* 2.jpg */,
+				2EAB7B231D3E244B00D99762 /* 2.png */,
 				2E1DD15F1D2F359E00997134 /* LaunchScreen.storyboard */,
 				2E1DD1621D2F359E00997134 /* Info.plist */,
 				2E1DD15A1D2F359E00997134 /* IkkyuChegj.xcdatamodeld */,
@@ -730,10 +736,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EAB7B241D3E244B00D99762 /* 2.png in Resources */,
 				2E1DD1611D2F359E00997134 /* LaunchScreen.storyboard in Resources */,
 				2E1DD15E1D2F359E00997134 /* Assets.xcassets in Resources */,
 				2E7789C81D3387D8000F29D4 /* LICENSE in Resources */,
 				2E1DD1D81D2F36AB00997134 /* MJRefresh.bundle in Resources */,
+				2EAB7B1E1D3E064400D99762 /* 2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -957,11 +965,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = IkkyuChegj/PrefixHeader.pch;
 				INFOPLIST_FILE = IkkyuChegj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hbshtx.ios.ikkyuchegj.IkkyuChegj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -970,11 +980,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = IkkyuChegj/PrefixHeader.pch;
 				INFOPLIST_FILE = IkkyuChegj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hbshtx.ios.ikkyuchegj.IkkyuChegj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
