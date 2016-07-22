@@ -221,7 +221,7 @@ static const float scale=0.55;
  *  @param num   所要显示数字
  *  @param index 位置
  */
--(void)showBadgeMark:(NSInteger)badge index:(NSInteger)index{
+-(void)showBadgeMark:(NSInteger)badge index:(NSInteger)inde{
     UILabel *numLabel = (UILabel *)[self.tabBarView viewWithTag:1010+index];
     numLabel.hidden=NO;
     CGRect nFrame = numLabel.frame;

@@ -34,7 +34,7 @@
     [self.view addSubview:self.tableView];
     
     //5.配置ImageView
-    self.zoomImageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"123.jpg"]];
+    self.zoomImageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"2.jpg"]];
     self.zoomImageView.frame=CGRectMake(0, -ImageHight , self.view.frame.size.width, ImageHight);
 
     //核心就是这句代码!
@@ -47,11 +47,11 @@
     
     //6.设置autoresizesSubviews让子类自动布局
     self.zoomImageView.autoresizesSubviews = YES;
-    
+    //头像
     self.circleView = [[UIImageView alloc]initWithFrame:CGRectMake(10, ImageHight-50, 40, 40)];
     self.circleView.backgroundColor = [UIColor redColor];
     self.circleView.layer.cornerRadius = 7.5f;
-    self.circleView.image = [UIImage imageNamed:@"123.jpg"];
+    self.circleView.image = [UIImage imageNamed:@"2.jpg"];
     self.circleView.clipsToBounds = YES;
     self.circleView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;//自动布局，自适应顶部
     [_zoomImageView addSubview:_circleView];

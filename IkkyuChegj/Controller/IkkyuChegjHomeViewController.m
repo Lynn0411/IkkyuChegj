@@ -12,13 +12,18 @@
 
 #import "HomeTopCollectionViewCell.h"
 #import "HomeModel_1.h"
+#import "ZYLStarView.h"
 
-@interface IkkyuChegjHomeViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout >
+@interface IkkyuChegjHomeViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+
+@property (strong, nonatomic)  ZYLStarView *startView;
 
 @property (nonatomic , strong)UICollectionView *collectionView;
 @property (nonatomic , strong)NSMutableArray *dataArr;
 @property (nonatomic , strong)UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic, strong) UIView *firstView;
+@property (nonatomic, strong) UIImageView *myImageView;
+
 
 @end
 
@@ -160,84 +165,56 @@
     [self reloadCollectionView];
     [self registerCell];
     [self httpRequest];
+//    self-.navigationController.navigationBar.barStyle = UIBarPositionTop;//状态栏的颜色白色，默认是黑色
+//    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;//bai色
+
     //添加下拉刷新控件
     [self.collectionView addHeaderWithTarget:self action:@selector(httpRequest)];
     //自动下拉刷新
     [self.collectionView headerBeginRefreshing];
-  
-
-
+    [self setAnimationPic];
     
-    [self createSubView];
-    [self startAnimatew];
+    
+    _startView = [[ZYLStarView alloc] initWithFrame:CGRectMake(120, 60, 100, 100)];
+    [self.view addSubview:_startView];
+    _startView.ratingFinal = @3;
+    
 }
-
-#pragma mark 动画先顺时针旋转90度再逆时针旋转90度
-/*
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    //离屏后会remove animation，这里重新添加
-    [self startAnimatew];
-    //程序从后台进入激活状态需要重新添加Animation
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startAnimatew) name:@"kAPPEnterForeground" object:nil];
+#pragma mark --旋转动画
+- (void)setAnimationPic{
+    _myImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 50, 100, 100)];
+    _myImageView.image = [UIImage imageNamed:@"2"];
+    [self.view addSubview:_myImageView];
+    [self setOneAnimation];
 }
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"kAPPEnterForeground" object:nil];
+- (void)setOneAnimation{
+    __block typeof(self) Self =self;
+    
+    [UIView animateWithDuration:1.5f
+                     animations:^{
+                         Self.myImageView.transform =CGAffineTransformRotate(Self.myImageView.transform, -M_PI_2);
+                    }
+                     completion:^(BOOL finished) {
+                        [Self setAnotherAnimation];
+                    }];
 }
-*/
-- (UIImageView *)createImageViewWithFrame:(CGRect)frame tag:(NSInteger)tag named:(NSString *)name{
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:frame];
-    imageView.tag = tag;
-    imageView.image = [UIImage imageNamed:name];
-    return imageView;
+- (void)setAnotherAnimation{
+    __block typeof(self) Self =self;
+    
+    [UIView animateWithDuration:1.5f
+                     animations:^{
+                         Self.myImageView.transform =CGAffineTransformRotate(Self.myImageView.transform,M_PI_2);
+                    }
+                     completion:^(BOOL finished) {
+                        [Self setOneAnimation];
+                    }];
 }
-- (void)createSubView{
-    _firstView = [[UIView alloc] initWithFrame:CGRectMake(20, 40, 60, 60)];
-    [self.view addSubview:_firstView];
-    CGRect frame = self.firstView.bounds;
-    UIImageView *imageView = [self createImageViewWithFrame:frame tag:kTAG_BASE_VALUE named:@"2.jpg"];
-    //定位点,不写默认是中心点
-    imageView.layer.anchorPoint = CGPointMake(28/45, 16/45);
-
-    imageView.frame = frame;
-    [self.firstView addSubview:imageView];
-
-}
-- (void)startAnimatew{
-    id fromValue = [NSNumber numberWithFloat:-M_PI_4];
-    id toValue = [NSNumber numberWithFloat:M_PI_4];
-    UIImageView *imageView = [self.firstView viewWithTag:kTAG_BASE_VALUE];
-    [self animationWithView:imageView keyPath:@"transform.rotation.z" fromValue:fromValue toValue:toValue];
-
-}
-
-- (void)animationWithView:(UIView *)view keyPath:(NSString *)keyPath fromValue:(id)fromValue toValue:(id)toValue{
-    CAAnimation *animation = [self createAnimationWithKeyPath:keyPath fromValue:fromValue toValue:toValue];
-    [view.layer addAnimation:animation forKey:nil];
-}
-- (CAAnimation *)createAnimationWithKeyPath:(NSString *)keyPath fromValue:(id)fromValue toValue:(id)toValue{
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:keyPath];
-    animation.duration = 1.5; // 持续时间
-    CAMediaTimingFunction *mediaTiming = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    animation.timingFunction = mediaTiming;
-    animation.repeatCount = HUGE_VALF; // 重复次数
-    animation.fromValue =  fromValue;// 起始角度
-    animation.toValue = toValue; // 终止角度
-    animation.autoreverses = YES;
-    return animation;
-}
-
-
-
-
 
 
 #pragma mark <UICollectionViewDataSource>
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.dataArr.count;
@@ -257,12 +234,15 @@
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(5, 5,5 , 5);
 }
+
 -(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     return 5;
 }
+
 -(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
     return 5;
 }
+
 #pragma mark <UICollectionViewDelegate>
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 //    HomeModel_1 *model = self.dataArr[indexPath.row];

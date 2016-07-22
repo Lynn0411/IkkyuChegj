@@ -56,6 +56,7 @@
 		2E1DD2481D2F497800997134 /* CitySelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1DD2471D2F497800997134 /* CitySelectTableViewCell.m */; };
 		2E1DD24B1D2F499E00997134 /* CitySelectedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1DD24A1D2F499E00997134 /* CitySelectedModel.m */; };
 		2E1DD24E1D2F531700997134 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1DD24D1D2F531700997134 /* MessageViewController.m */; };
+		2E4C24741D42185A00522E44 /* ZYLStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C24731D42185A00522E44 /* ZYLStarView.m */; };
 		2E7789941D335326000F29D4 /* HomeTopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7789931D335326000F29D4 /* HomeTopCollectionViewCell.m */; };
 		2E7789BF1D3387D8000F29D4 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7789981D3387D8000F29D4 /* AFHTTPRequestOperation.m */; };
 		2E7789C01D3387D8000F29D4 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E77899A1D3387D8000F29D4 /* AFHTTPRequestOperationManager.m */; };
@@ -77,6 +78,7 @@
 		2E7789D01D3387D8000F29D4 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7789BC1D3387D8000F29D4 /* UIRefreshControl+AFNetworking.m */; };
 		2E7789D11D3387D8000F29D4 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7789BE1D3387D8000F29D4 /* UIWebView+AFNetworking.m */; };
 		2E778A131D338D1B000F29D4 /* HttpRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E778A121D338D1B000F29D4 /* HttpRequestManager.m */; };
+		2E7ED6D71D40AB81000963DC /* ZYLCounterOrClockWiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7ED6D61D40AB81000963DC /* ZYLCounterOrClockWiseView.m */; };
 		2EAB7B1E1D3E064400D99762 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EAB7B1D1D3E064400D99762 /* 2.jpg */; };
 		2EAB7B241D3E244B00D99762 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EAB7B231D3E244B00D99762 /* 2.png */; };
 /* End PBXBuildFile section */
@@ -200,6 +202,8 @@
 		2E1DD24A1D2F499E00997134 /* CitySelectedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitySelectedModel.m; sourceTree = "<group>"; };
 		2E1DD24C1D2F531700997134 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		2E1DD24D1D2F531700997134 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		2E4C24721D42185A00522E44 /* ZYLStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLStarView.h; sourceTree = "<group>"; };
+		2E4C24731D42185A00522E44 /* ZYLStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLStarView.m; sourceTree = "<group>"; };
 		2E7789921D335326000F29D4 /* HomeTopCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTopCollectionViewCell.h; sourceTree = "<group>"; };
 		2E7789931D335326000F29D4 /* HomeTopCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTopCollectionViewCell.m; sourceTree = "<group>"; };
 		2E7789971D3387D8000F29D4 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -243,6 +247,8 @@
 		2E7789BE1D3387D8000F29D4 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		2E778A111D338D1B000F29D4 /* HttpRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequestManager.h; sourceTree = "<group>"; };
 		2E778A121D338D1B000F29D4 /* HttpRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequestManager.m; sourceTree = "<group>"; };
+		2E7ED6D51D40AB81000963DC /* ZYLCounterOrClockWiseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLCounterOrClockWiseView.h; sourceTree = "<group>"; };
+		2E7ED6D61D40AB81000963DC /* ZYLCounterOrClockWiseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLCounterOrClockWiseView.m; sourceTree = "<group>"; };
 		2EAB7B1D1D3E064400D99762 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		2EAB7B231D3E244B00D99762 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -404,6 +410,8 @@
 			children = (
 				2E1DD1911D2F363600997134 /* IkkyuChegjHomeViewController.h */,
 				2E1DD1921D2F363600997134 /* IkkyuChegjHomeViewController.m */,
+				2E7ED6D51D40AB81000963DC /* ZYLCounterOrClockWiseView.h */,
+				2E7ED6D61D40AB81000963DC /* ZYLCounterOrClockWiseView.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -564,6 +572,8 @@
 			children = (
 				2E1DD2461D2F497800997134 /* CitySelectTableViewCell.h */,
 				2E1DD2471D2F497800997134 /* CitySelectTableViewCell.m */,
+				2E4C24721D42185A00522E44 /* ZYLStarView.h */,
+				2E4C24731D42185A00522E44 /* ZYLStarView.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -808,9 +818,11 @@
 				2E1DD2021D2F454900997134 /* UIBarButtonItem+Extension.m in Sources */,
 				2E1DD2031D2F454900997134 /* UIFont+Extension.m in Sources */,
 				2E7789CA1D3387D8000F29D4 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				2E4C24741D42185A00522E44 /* ZYLStarView.m in Sources */,
 				2E7789CE1D3387D8000F29D4 /* UIImageView+AFNetworking.m in Sources */,
 				2E7789C71D3387D8000F29D4 /* AFURLSessionManager.m in Sources */,
 				2E1DD2001D2F454900997134 /* BaseCollectionViewCell.m in Sources */,
+				2E7ED6D71D40AB81000963DC /* ZYLCounterOrClockWiseView.m in Sources */,
 				2E1DD1971D2F365A00997134 /* IkkyuChegjWoDeViewController.m in Sources */,
 				2E1DD1DF1D2F36AB00997134 /* UIView+MJExtension.m in Sources */,
 				2E1DD1EB1D2F36AB00997134 /* UIImage+MultiFormat.m in Sources */,

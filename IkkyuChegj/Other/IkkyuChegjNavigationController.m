@@ -25,8 +25,7 @@
     self.delegate = self;
     
 }
-+(void)initialize
-{
++(void)initialize{
     //设置 UINAvigationBar 的主题
     [self setUpNavigationBarTheme];
 }
@@ -34,8 +33,7 @@
 /**
  *  设置 UIBarButtonItem的主题
  */
-+(void)setUpNavigationBarTheme
-{
++(void)setUpNavigationBarTheme{
     // 通过appearance对象能修改整个项目中所有UIBarbuttonItem的样式
     UINavigationBar *appearance = [UINavigationBar appearance];
     //设置导航条的背景
@@ -54,8 +52,7 @@
     
 }
 
--(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
+-(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if (self.viewControllers.count > 0) {// 如果现在push的不是栈底控制器(最先push进来的那个控制器)
         viewController.hidesBottomBarWhenPushed = YES;
         UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
@@ -72,8 +69,7 @@
     [super pushViewController:viewController animated:animated];
 }
 
--(void)back
-{
+-(void)back{
     [self popViewControllerAnimated:YES];
 }
 @end
